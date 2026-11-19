@@ -228,6 +228,9 @@ footer p{color:var(--muted);font-size:.9rem}
 .fx-body{display:flex;flex-direction:column;gap:2px;min-width:0}
 .fx-body b{font-weight:600;line-height:1.3}
 .fx-body span{font-size:.85rem;color:var(--muted)}
+.watch{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:.85rem;font-weight:600;color:var(--petrol);text-decoration:none}
+.watch:hover{color:var(--bronze)}
+.watch-row{display:flex;flex-wrap:wrap;gap:4px 14px}
 .fx.ape{background:var(--bronze-soft);border-color:transparent}
 .cal{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -448,12 +451,13 @@ footer p{color:var(--muted);font-size:.9rem}
 <div class="sheet" id="sheet-programme" role="dialog" aria-modal="true" aria-labelledby="sh-programme" hidden>
   <div class="sheet-head"><h2 id="sh-programme">In the Screening Room</h2><button type="button" class="sheet-close" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
   <div class="sheet-body">
-    <p class="hint">Thursday 19 November. Drop in whenever your break allows, stay as long as you can, and come back for another.</p>
+    <p class="hint">Thursday 19 November, Cinema (B2 Level). Drop in whenever your break allows, stay as long as you can, and come back for another.</p>
+    <p class="hint">Missed one, or want to see more? Each film is linked below so you can watch it in your own time. The TED Talks are free; the others need a Netflix account.</p>
     <div class="fx-list">
-      <article class="fx" data-start="12:00" data-end="12:50"><div class="fx-time">12:00</div><div class="fx-body"><b>Sprint</b><span>The world’s fastest men and the mindset behind 10 seconds · 45 min</span></div><span class="pill">Thu</span></article>
-      <article class="fx" data-start="13:00" data-end="13:40"><div class="fx-time">13:00</div><div class="fx-body"><b>Two TED Talks</b><span>Sleep, and emotional first aid · 40 min</span></div><span class="pill">Thu</span></article>
-      <article class="fx" data-start="14:00" data-end="14:40"><div class="fx-time">14:00</div><div class="fx-body"><b>The Mind, Explained</b><span>Anxiety and mindfulness · 40 min</span></div><span class="pill">Thu</span></article>
-      <article class="fx" data-start="15:00" data-end="15:45"><div class="fx-time">15:00</div><div class="fx-body"><b>Live to 100</b><span>The secrets of Sardinia · 45 min</span></div><span class="pill">Thu</span></article>
+      <article class="fx" data-start="12:00" data-end="12:50"><div class="fx-time">12:00</div><div class="fx-body"><b>Sprint</b><span>The world’s fastest men and the mindset behind 10 seconds · 45 min</span><a class="watch" href="https://www.netflix.com/title/81685880" target="_blank" rel="noopener">Watch on Netflix →</a></div><span class="pill">Thu</span></article>
+      <article class="fx" data-start="13:00" data-end="13:40"><div class="fx-time">13:00</div><div class="fx-body"><b>Two TED Talks</b><span>Sleep, and emotional first aid · 40 min</span><span class="watch-row"><a class="watch" href="https://www.youtube.com/watch?v=5MuIMqhT8DM" target="_blank" rel="noopener">Sleep Is Your Superpower →</a><a class="watch" href="https://www.youtube.com/watch?v=F2hc2FLOdhI" target="_blank" rel="noopener">Emotional First Aid →</a></span></div><span class="pill">Thu</span></article>
+      <article class="fx" data-start="14:00" data-end="14:40"><div class="fx-time">14:00</div><div class="fx-body"><b>The Mind, Explained</b><span>Anxiety and mindfulness · 40 min</span><a class="watch" href="https://www.netflix.com/title/81098586" target="_blank" rel="noopener">Watch on Netflix (S1, episodes 3 and 4) →</a></div><span class="pill">Thu</span></article>
+      <article class="fx" data-start="15:00" data-end="15:45"><div class="fx-time">15:00</div><div class="fx-body"><b>Live to 100</b><span>The secrets of Sardinia · 45 min</span><a class="watch" href="https://www.netflix.com/title/81214929" target="_blank" rel="noopener">Watch on Netflix (S1, episode 2) →</a></div><span class="pill">Thu</span></article>
     </div>
     <div class="cal">
       <span class="hint">Save it:</span>
@@ -865,6 +869,7 @@ footer p{color:var(--muted);font-size:.9rem}
   selectTab('fuel');
   renderFuel(); renderMOT(); planSleep(); renderCheckup(false);
   renderQ(); updNote(); renderFinder();
+  if(location.hash==='#films'){ openS('programme'); }
 })();
 </script>
 </body>
